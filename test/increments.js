@@ -36,8 +36,8 @@ contract('Increments', (accounts) => {
             let _newIncrement = await instance.incrementBy();
             assert.equal(_newIncrement, 6);
         } catch (err) {
-            let _newIncrement = await instance.incrementBy();
-            assert.equal(_newIncrement, 4);
+            let _string = err + ".";
+            assert.equal(_string.includes("You are not the owner."), true);
         }
     });
 
